@@ -1,0 +1,57 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Intensive Longitudinal Psychometrics
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of this Shiny app is to facilitate application of intensive
+longitudinal psychometrics to better understand measurement properties
+of scales used in designs like ecological momentary assessment,
+experience sampling, ambulatory assessment, and daily diaries.
+
+The application is implements some foundational methods like
+
+- multilevel models for within-person and between-person reliability
+
+- p-technique factor analysis for person-specific reliability
+
+- multilevel factor analysis for within-person and between-person
+  construct validation
+
+This application accompanies a paper reviewing foundational methods in
+intensive longitudinal psychometrics, which can be found
+[here](https://osf.io/dmpwc)
+
+## Run the Shiny App Locally
+
+The Shiny all can be run over the web at
+<https://dynamicfit.shinyapps.io/IL_Psychometrics/>. This server has a
+limited amount of computational time per month and supports a limited
+number of concurrent users.
+
+Alternatively, the app can be run on a user’s local computer to increase
+speed or if the web-version is non-responsive (e.g., the limit for
+number of concurrent users or the maximum computational time has been
+reached).
+
+The Shiny app can be called from RStudio using the following code,
+
+``` r
+list.of.packages <- c("shiny","lavaan", "dplyr","shinyjs","tidyr","purrr","ggplot2","lme4","misty")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+shiny::runGitHub("IL_Psychometrics","dmcneish18")
+```
+
+## Tutorial on Using the App
+
+A separate document located [here](https://osf.io/3zuwb) walks through
+how to use the app, how to interpret the output, and what options are
+currently available.
+
+This document also includes information on applying the intensive
+longitudinal psychometrics in the Shiny app (as well as more advanced
+methods) in R and Mplus.
